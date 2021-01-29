@@ -1,5 +1,6 @@
 import 'package:econtractor/pages/home_screen.dart';
 import 'package:econtractor/pages/login.dart';
+import 'package:econtractor/pages/profile_screen.dart';
 import 'package:econtractor/pages/register_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +23,9 @@ class MyApp extends StatelessWidget {
       title: 'eContractor',
       theme: ThemeData(
         textTheme: ThemeData.light().textTheme.copyWith(
-            bodyText1: GoogleFonts.poppins(),
-            bodyText2: GoogleFonts.montserrat()),
+              bodyText1: GoogleFonts.poppins(),
+              bodyText2: GoogleFonts.montserrat(),
+            ),
         primaryColor: Colors.redAccent,
         accentColor: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -32,7 +34,8 @@ class MyApp extends StatelessWidget {
       routes: {
         RegisterScreen.routeName: (context) => RegisterScreen(),
         LoginScreen.routeName: (context) => LoginScreen(),
-        HomeScreen.routeName: (context) => HomeScreen()
+        HomeScreen.routeName: (context) => HomeScreen(),
+        ProfileScreen.routeName: (context) => ProfileScreen()
       },
     );
   }

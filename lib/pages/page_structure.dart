@@ -1,13 +1,11 @@
 import 'dart:math' show pi;
 
+import 'package:econtractor/const_and_final.dart';
 import 'package:econtractor/riverpod/page.dart';
 import 'package:econtractor/widgets/drawer.dart';
 import 'package:flutter_riverpod/all.dart';
-
-import './home_screen.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class PageStructure extends ConsumerWidget {
   final String title;
@@ -29,23 +27,23 @@ class PageStructure extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     final angle = ZoomDrawer.isRTL() ? 180 * pi / 180 : 0.0;
     final _currentPage = context.read(currentPageProvider.state);
-    final container = Container(
-      color: Colors.grey[300],
-      child: Center(
-        child: Text(" ${HomeScreen.mainMenu[_currentPage].title}"),
-      ),
-    );
-    final color = Theme.of(context).accentColor;
-    final style = TextStyle(color: color);
+    final size = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('eContractor'),
+        backgroundColor: Colors.white,
+        title: Container(
+          width: size.width / 2,
+          child: SvgPicture.asset(
+            "assets/icons/logo.svg",
+          ),
+        ),
         leading: Transform.rotate(
           angle: angle,
           child: IconButton(
             icon: Icon(
               Icons.menu,
+              color: Colors.black,
             ),
             onPressed: () {
               ZoomDrawer.of(context).toggle();
@@ -53,9 +51,7 @@ class PageStructure extends ConsumerWidget {
           ),
         ),
       ),
-      body: Center(
-        child: container,
-      ),
+      body: widgetList.elementAt(_currentPage),
     );
   }
 }

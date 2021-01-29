@@ -180,5 +180,9 @@ class MenuItem {
   final IconData icon;
   final int index;
 
-  const MenuItem(this.title, this.icon, this.index);
+  const MenuItem(
+    this.title,
+    this.icon,
+    this.index,
+  );
 }
