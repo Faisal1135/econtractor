@@ -10,11 +10,10 @@ import '../widgets/drawer.dart';
 class HomeScreen extends ConsumerWidget {
   static const routeName = "home-screen";
   static List<MenuItem> mainMenu = [
-    MenuItem("Profile", Icons.people, 0),
-    MenuItem("Order", Icons.card_giftcard, 1),
+    MenuItem("Home", Icons.home, 0),
+    MenuItem("Profile", Icons.card_giftcard, 1),
     MenuItem("MyCart", Icons.shopping_bag, 2),
-    MenuItem("Helpline", Icons.help, 3),
-    MenuItem("Payment", Icons.payment, 4),
+    MenuItem("Construction", Icons.help, 3),
   ];
 
   final _drawerController = ZoomDrawerController();

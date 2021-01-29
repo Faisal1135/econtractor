@@ -1,4 +1,6 @@
+import 'package:econtractor/pages/search_page.dart';
 import 'package:econtractor/widgets/productItem.dart';
+import 'package:econtractor/widgets/searchWidget.dart';
 import 'package:flutter/material.dart';
 
 class MainHomeScreen extends StatelessWidget {
@@ -7,23 +9,12 @@ class MainHomeScreen extends StatelessWidget {
     final textThm = Theme.of(context).textTheme;
     return ListView(
       children: [
-        Container(
-          margin: EdgeInsets.only(top: 30),
-          child: Card(
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            child: ListTile(
-              leading: Text(
-                'Search ...',
-                style: textThm.bodyText1.copyWith(
-                  fontSize: 19,
-                ),
-              ),
-              trailing: Icon(Icons.search),
-            ),
-          ),
-        ),
         SizedBox(
           height: 20,
+        ),
+        InkWell(
+          child: SearchWidget(),
+          onTap: () => Navigator.pushNamed(context, SearchPage.routeName),
         ),
         Container(
           child: Text(

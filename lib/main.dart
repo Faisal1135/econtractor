@@ -1,7 +1,9 @@
+import 'package:econtractor/pages/constraction_page.dart';
 import 'package:econtractor/pages/home_screen.dart';
 import 'package:econtractor/pages/login.dart';
 import 'package:econtractor/pages/profile_screen.dart';
 import 'package:econtractor/pages/register_screen.dart';
+import 'package:econtractor/pages/search_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -35,7 +37,9 @@ class MyApp extends StatelessWidget {
         RegisterScreen.routeName: (context) => RegisterScreen(),
         LoginScreen.routeName: (context) => LoginScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
-        ProfileScreen.routeName: (context) => ProfileScreen()
+        ProfileScreen.routeName: (context) => ProfileScreen(),
+        SearchPage.routeName: (context) => SearchPage(),
+        ContractionPage.routeName: (context) => ContractionPage(),
       },
     );
   }
